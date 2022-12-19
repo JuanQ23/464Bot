@@ -26,7 +26,7 @@ async def react(interaction: discord.Interaction, message: discord.Message):
 async def main():
     await load()
     async with bot:
-        token = "MTA1MTY5MDcwOTA0NjAwMTc4Ng.GMDX7O.H9VFHaSoJivp5ZD3QVb0ywQrwwmIzl7Z80A3HI"
+        token = "YOUR TOKEN HERE"
         await bot.start(token)
 
 asyncio.run(main())
