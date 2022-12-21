@@ -5,6 +5,8 @@ from typing import List
 
 
 class UserSelectView(discord.ui.View):
+    """The user select box that is sent to discord."""
+
     def __init__(self):
         super().__init__()
         self.value: list[discord.Member | discord.User]
@@ -28,7 +30,7 @@ class Teams(commands.Cog):
     async def createteamcategory(self, interaction: discord.Interaction):
         """creates a category for teams."""
 
-        # error handling
+        # error handling / keeping the type checker happy.
         if interaction.guild is None:
             await interaction.response.send_message("The guild appears to not be accessible by the bot. Possibly a permissions issue?")
             return
@@ -41,6 +43,7 @@ class Teams(commands.Cog):
     @app_commands.default_permissions(manage_guild=True)
     async def team(self, interaction: discord.Interaction):
         """creates team voice and text channels."""
+
         # error handling / keeping the type hinter happy
         if interaction.guild is None:
             await interaction.response.send_message("the bot is not in any guilds")
