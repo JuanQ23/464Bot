@@ -35,12 +35,12 @@ async def delete_groups(category: discord.CategoryChannel):
 
 
 class ChannelSelectView(discord.ui.View):
+    """the channel select box that is sent to discord."""
     def __init__(self):
         super().__init__()
         self.value: List[app_commands.AppCommandChannel |
                          app_commands.AppCommandThread]
 
-    # @ui.select(cls=type_we_want, **other_things)
     @discord.ui.select(cls=discord.ui.ChannelSelect, placeholder="search", min_values=1, max_values=20)
     async def my_user_channels(self, interaction: discord.Interaction, select: discord.ui.ChannelSelect):
         self.value = select.values
@@ -63,7 +63,7 @@ class PrivateRooms(commands.Cog):
 
         await interaction.response.defer(thinking=True)
 
-        # error handling
+        # error handling / keeping the type checker happy.
         if interaction.guild is None:
             await interaction.response.send_message("The guild appears to not be accessible by the bot. Possibly a permissions issue?")
             return
@@ -78,14 +78,14 @@ class PrivateRooms(commands.Cog):
                 continue
             await create_channels(interaction, member)
 
-        await interaction.followup.send("done")
+        await interaction.followup.send("done. ctrl+shift+a to collapse")
 
     @app_commands.command()
     @app_commands.default_permissions(manage_guild=True)
     async def destroy(self, interaction: discord.Interaction):
         """destroy selected categories, channels will not work"""
 
-        # error handling
+        # error handling / keeping the type checker happy.
         if interaction.guild is None:
             await interaction.response.send_message("The guild appears to not be accessible by the bot. Possibly a permissions issue?")
             return
@@ -113,7 +113,7 @@ class PrivateRooms(commands.Cog):
     async def destroy_all_except(self, interaction: discord.Interaction):
         """Destroy all except that selected categories."""
 
-        # error handling
+        # error handling / keeping the type checker happy.
         if interaction.guild is None:
             await interaction.response.send_message("The guild appears to not be accessible by the bot. Possibly a permissions issue?")
             return
