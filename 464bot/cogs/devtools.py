@@ -1,14 +1,14 @@
 from discord.ext import commands
-
+from discord import app_commands
 
 class DevTools(commands.Cog):
     """set of commands that are used to maintain and manage the commands across all servers."""
 
     def __init__(self, bot: commands.Bot):
         self.bot = bot
-
-    @commands.is_owner()
+    
     @commands.command(name="sync")
+    @app_commands.default_permissions(manage_guild=True) #setting command permission.
     async def sync(self, ctx):
         """syncing commands with discord API"""
 

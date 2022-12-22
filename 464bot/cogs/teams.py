@@ -29,7 +29,7 @@ class Teams(commands.Cog):
         self.teamnum = 1
 
     @app_commands.command()
-    @app_commands.default_permissions(manage_guild=True)
+    @app_commands.default_permissions(manage_guild=True) #setting command permission.
     async def createteamcategory(self, interaction: discord.Interaction):
         """creates a category for teams."""
 
@@ -44,7 +44,7 @@ class Teams(commands.Cog):
         await category.move(beginning=True)
 
     @app_commands.command()
-    @app_commands.default_permissions(manage_guild=True)
+    @app_commands.default_permissions(manage_guild=True) #setting command permission.
     async def team(self, interaction: discord.Interaction):
         """creates team voice and text channels."""
 
