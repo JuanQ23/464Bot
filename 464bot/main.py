@@ -13,7 +13,6 @@ bot = commands.Bot(command_prefix="*", intents=intents)
 async def on_ready():
     """event that is called when the bot is ready."""
     print("bot, ready")
-    print(f"is the bot rate limited? {bot.is_ws_ratelimited()}")
 
 async def load():
     """loads all the cogs in the cogs file"""
