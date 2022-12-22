@@ -65,7 +65,7 @@ class PrivateRooms(commands.Cog):
         self.categories: list[discord.CategoryChannel] = []
 
     @app_commands.command()
-    @app_commands.default_permissions(manage_guild=True) 
+    @app_commands.default_permissions(manage_guild=True) #setting command permission.
     async def create(self, interaction: discord.Interaction):
         """Creates private categories, private text channels, private voice channels for each student"""
 
@@ -89,7 +89,7 @@ class PrivateRooms(commands.Cog):
         await interaction.followup.send("done. ctrl+shift+a to collapse")
 
     @app_commands.command()
-    @app_commands.default_permissions(manage_guild=True)
+    @app_commands.default_permissions(manage_guild=True) #setting command permission.
     async def destroy(self, interaction: discord.Interaction):
         """destroy selected categories, channels will not work"""
 
@@ -121,7 +121,7 @@ class PrivateRooms(commands.Cog):
                     await delete_groups(category)
 
     @app_commands.command()
-    @app_commands.default_permissions(manage_guild=True)
+    @app_commands.default_permissions(manage_guild=True) #setting command permission.
     async def destroy_all_except(self, interaction: discord.Interaction):
         """Destroy all except that selected categories."""
 
