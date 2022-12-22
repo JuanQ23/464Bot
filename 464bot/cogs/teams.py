@@ -17,8 +17,7 @@ class UserSelectView(discord.ui.View):
     async def my_user_users(self, interaction: discord.Interaction, select: discord.ui.UserSelect):
         self.value = select.values #storing selected values.
         await interaction.response.send_message("Creating, should be quick..", delete_after=5)
-        # stopping interaction so that View.wait() can stop waiting.
-        self.stop()
+        self.stop() #stopping interaction so that View.wait() can stop waiting.
 
 
 class Teams(commands.Cog):
