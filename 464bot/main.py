@@ -21,7 +21,7 @@ async def load():
             await bot.load_extension(f"cogs.{file[:-3]}")
 
 async def main():
-    """function that starts the loads all of the cogs in the cogs folder. and starts the bot."""
+    """function that loads all of the cogs in the cogs folder. and starts the bot."""
     await load()
     async with bot:
         token = "YOUR TOKEN HERE"
