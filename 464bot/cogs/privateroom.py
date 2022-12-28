@@ -69,7 +69,7 @@ class ChannelSelectView(discord.ui.View):
         """
         self.value = select.values  # storing user selected items.
         await interaction.response.send_message("processing, please wait", delete_after=5)
-        self.stop()
+        self.stop() #stopping the interaction so that View.wait() can stop waiting.
 
 
 class PrivateRooms(commands.Cog):
