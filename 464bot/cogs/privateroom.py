@@ -1,5 +1,4 @@
-"""A cog that manages the creation of private channels.
-"""
+""" A file that holds a cog that manages the creation of private channels."""
 from typing import List
 
 import discord
@@ -183,7 +182,7 @@ class PrivateRooms(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_update(self, before: discord.Member, after: discord.Member):
-        """on_member_update listens for the event the folliwing things change:
+        """A event listener that listens for the following things to change:
         *nickname
         *roles
         *pending

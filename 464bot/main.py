@@ -1,7 +1,7 @@
 """Main file that creates the bot, loads the cogs, and runs the bot.
 
-This file creates a bot using commands.Bot with all the intents.
-All of the cogs in the cogs folder onto the bot.
+This file creates a bot using commands.Bot with all the intents and loads all of the cogs in the
+cogs folder onto the bot.
 """
 import os
 import asyncio
@@ -38,12 +38,12 @@ async def main():
     Once the Bot is created the load function adds all of the cogs
     in the cogs file onto the bot.
 
-    bot.start method, is short hand  coroutine for discord.Client.login() &
+    THe bot.start method is short hand  coroutine for discord.Client.login() &
     discord.Client.Connect()
 
     login(): Logs in the client with the specified credentials and calls the setup_hook.
     Connect(): Creates a websocket connection that listens to messages from Discord.
-    This is a loop that runs the entire event system (amoung other things mis).
+    This is a loop that runs the entire event system (amoung other things).
     """
     await load()
     async with bot:

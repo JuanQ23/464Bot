@@ -18,7 +18,7 @@ class UserSelectView(discord.ui.View):
 
     @discord.ui.select(cls=discord.ui.UserSelect, placeholder="search", min_values=1, max_values=3)
     async def my_user_users(self, interaction: discord.Interaction, select: discord.ui.UserSelect):
-        """A callback that is invoked when the user selects users in the interaction.
+        """A callback that is invoked when the user selects users in the View.
 
         Args:
             interaction (discord.Interaction): Event variable
