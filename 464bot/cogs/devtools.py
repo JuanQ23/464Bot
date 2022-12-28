@@ -1,14 +1,20 @@
+"""A file meant to hold the DevTools Cog which responsible for maintance.
+Raises:
+    error: Error raised within any command.
+"""
 from discord.ext import commands
 from discord import app_commands
 
+
 class DevTools(commands.Cog):
-    """set of commands that are used to maintain and manage the commands across all servers."""
+    """The Cog that will be used for command maintanance."""
 
     def __init__(self, bot: commands.Bot):
         self.bot = bot
-    
+
     @commands.command(name="sync")
-    @app_commands.default_permissions(manage_guild=True) #setting command permission.
+    # setting command permission.
+    @app_commands.default_permissions(manage_guild=True)
     async def sync(self, ctx):
         """syncing commands with discord API"""
 
@@ -27,5 +33,6 @@ class DevTools(commands.Cog):
 
 
 async def setup(bot):
-    """This function adds the cog to the bot so that it it's command can be ran and the events can be listned for."""
+    """This function adds the cog to the bot so that it it's command can be ran and the
+    events can be listned for."""
     await bot.add_cog(DevTools(bot))
